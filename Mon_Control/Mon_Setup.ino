@@ -11,11 +11,6 @@ decode_results results;
 */
 int debugIR = 0;
 
-//Monitor Tests 0 (off) or 1 (on)
-int samsungTest = 0;
-int asusTest = 0;
-
-
 // Variables for Samsung Monitor
 int samsungInputPin = 4;
 int samsungPowerPin = 5;
