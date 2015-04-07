@@ -17,6 +17,12 @@ void PushButtonAsusDouble(int pin){
    digitalWrite(pin, LOW);
 }
 
+void PushButtonPowerSamsung(const int pin) {
+    digitalWrite(pin, HIGH);
+    delay(1000);
+    digitalWrite(pin, LOW);
+}
+
 //Pushes the Input Button after multiplexing
 void PushButtonInputtSamsung(const int pin) {
     digitalWrite(pin, LOW);
