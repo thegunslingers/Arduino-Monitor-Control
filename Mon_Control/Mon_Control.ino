@@ -1,5 +1,19 @@
 void loop() {
-   
+  if (irrecv.decode(&results)) {
+    if(debugIR == 1){     
+      Serial.println(results.value, HEX); //Print IR values in HEX convert to decimals to 
+    }
+    //FF key for my IR Remote
+    if(results.value == 222028317){
+     //Push a button
+    }
+    //ReWind key
+    if(results.value == 2878553538){
+     //Push Another button 
+    }
+    irrecv.resume(); // Receive the next value
+  }
+    
   //delay(1000);
   PushButtonAsus(asusTPower);
   //PushButtonAsus(asusTInput);

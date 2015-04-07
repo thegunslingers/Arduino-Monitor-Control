@@ -1,4 +1,3 @@
-
 //Use this to push most buttons on the monitor
 //Power button for example
 void PushButtonAsus(int pin){
