@@ -1,7 +1,7 @@
 void loop() {
   if (irrecv.decode(&results)) {
-    if(debugIR == 1){     
-      Serial.println(results.value, HEX); //Print IR values in HEX convert to decimals to 
+    if(debugIR == 1){     // If IR debug is on print IR Values IN Hex convert to decimal and put in the if
+      Serial.println(results.value, HEX); 
     }
     //FF key for my IR Remote
     if(results.value == 222028317){
@@ -13,7 +13,8 @@ void loop() {
     }
     irrecv.resume(); // Receive the next value
   }
-    
+  //Asus Button Test 
+  
   //delay(1000);
   PushButtonAsus(asusTPower);
   //PushButtonAsus(asusTInput);
@@ -22,7 +23,9 @@ void loop() {
   //PushButtonAsus(asusTDown);
   //PushButtonAsus(asusTOther);
   delay(1500);
- /* 
+ 
+ /* Samsung Monitor Buttons Test 
+ 
  delay(7000);
  digitalWrite(samsungPowerPin,HIGH);
  delay(1500);

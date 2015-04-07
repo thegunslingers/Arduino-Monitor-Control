@@ -1,5 +1,5 @@
-//Use this to push most buttons on the monitor
-//Power button for example
+/*Use this to push most buttons on the monitor
+Power button for example*/
 void PushButtonAsus(int pin){
    digitalWrite(pin, HIGH);
    delay(1500);
