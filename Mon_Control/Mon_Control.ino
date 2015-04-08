@@ -1,6 +1,7 @@
 void loop() {
   if (irrecv.decode(&results)) {
-    if(debugIR == 1 && samsungTest != 1 && asusTest != 1){     // If IR debug is on print IR Values IN Hex and put in the if's below
+    if(debugIR == 1 && samsungTest != 1 && asusTest != 1){    
+      // If IR debug is on print IR Values IN Hex and put in the if's below
       Serial.println(results.value, HEX); 
     }
     
@@ -34,6 +35,7 @@ void interperetIR(){
     }
     else{
        //if your here you 
+       if(debugIR == 1 && samsungTest != 1 && asusTest != 1){
           Serial.println("The above value is not recongnized. \n If you wish to use it, write it down and add it to the interperetIR function"); 
        } 
     }
