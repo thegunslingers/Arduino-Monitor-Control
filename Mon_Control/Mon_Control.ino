@@ -16,10 +16,8 @@ void loop() {
     AsusMonTest()
   }
   
- 
   delay(1500);
  
-  
 }
 
 void interperetIR(){
@@ -28,11 +26,16 @@ void interperetIR(){
   
      //FF key for my IR Remote
     if(valueIR == 222028317){
-     //Push a button or combo of buttons
+       //Push a button or combo of buttons
     }
     //ReWind key
     else if(valueIR == 2878553538){
-     //Push another button 
+       //Push another button 
+    }
+    else{
+       //if your here you 
+          Serial.println("The above value is not recongnized. \n If you wish to use it, write it down and add it to the interperetIR function"); 
+       } 
     }
   
 }
