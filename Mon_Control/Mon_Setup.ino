@@ -12,6 +12,7 @@ decode_results results;
 int debugIR = 0;
 
 //Monitor Tests 0 (off) or 1 (on)
+//Will not run IR or debugIR with either test on
 int samsungTest = 0;
 int asusTest = 0;
 
@@ -31,7 +32,7 @@ int asusTOther = 11;
 
 void setup() {
 
-  if(debugIR == 1){ 
+  if(debugIR == 1 && samsungTest != 1 && asusTest != 1){ 
       Serial.begin(9600);  //Start Serial for Debug Print
   }
   irrecv.enableIRIn(); // Start the receiver

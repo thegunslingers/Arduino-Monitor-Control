@@ -1,16 +1,10 @@
 void loop() {
   if (irrecv.decode(&results)) {
-    if(debugIR == 1){     // If IR debug is on print IR Values IN Hex convert to decimal and put in the if
+    if(debugIR == 1 && samsungTest != 1 && asusTest != 1){     // If IR debug is on print IR Values IN Hex and put in the if's below
       Serial.println(results.value, HEX); 
     }
-    //FF key for my IR Remote
-    if(results.value == 222028317){
-     //Push a button
-    }
-    //ReWind key
-    if(results.value == 2878553538){
-     //Push Another button 
-    }
+    
+    interperetIR()
     irrecv.resume(); // Receive the next value
   }
   //Samsung Button Test
@@ -25,6 +19,20 @@ void loop() {
  
   delay(1500);
  
+  
+}
 
-   
+void interperetIR(){
+ 
+    int valueIR = results.value;
+  
+     //FF key for my IR Remote
+    if(valueIR == 222028317){
+     //Push a button or combo of buttons
+    }
+    //ReWind key
+    else if(valueIR == 2878553538){
+     //Push another button 
+    }
+  
 }
