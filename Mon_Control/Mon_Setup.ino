@@ -25,15 +25,20 @@ int samsungPowerPin = 5;
 int asusTPower = 6;
 int asusTInput = 7;
 int asusTMenu  = 8;
-int asusTUp    = 9;
-int asusTDown  = 10;
+int asusTUp    = 9; // also controls brightnest
+int asusTDown  = 10; // also controls contrast
 //????
 int asusTOther = 11;
 
 void setup() {
 
-  if(debugIR == 1 && samsungTest != 1 && asusTest != 1){ 
+  if(debugIR == 1 || samsungTest == 1 || asusTest == 1){ 
       Serial.begin(9600);  //Start Serial for Debug Print
+      if(samsungTest == 1 || asusTest == 1)
+           Serial.println("Asus Power button on: %d\t Asus Input button on: %d\n", asusTPower, asusTInput);
+           Serial.println("Asus menu button on: %d\t Asus Up button on: %d\n", asusTMenu, asusTUp);
+           Serial.println("Asus Down button on: %d\n", asusTDown);
+      }
   }
   irrecv.enableIRIn(); // Start the receiver
   
