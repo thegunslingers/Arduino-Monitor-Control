@@ -1,29 +1,48 @@
+//Get variables from Mon_Setup
+//Ir values results
+
+
+//Debug and monitor tests
+extern int debugIR;
+extern int samsungTest;
+extern int asusTest;
+
+// Variables for Samsung Monitor
+extern int samsungInputPin;
+extern int samsungPowerPin;
+
+//Variables for Thin Asus Monitor
+extern int asusTPower;
+extern int asusTInput;
+extern int asusTMenu;
+extern int asusTUp;
+extern int asusTDown;
+extern int asusTOther;
+
 void loop() {
-  if (irrecv.decode(&results)) {
+  if (irrecv.decode(&irResults)) {
     if(debugIR == 1 && samsungTest != 1 && asusTest != 1){    
       // If IR debug is on print IR Values IN Hex and put in the if's below
-      Serial.println(results.value, HEX); 
+      Serial.println(irResults.value, HEX); 
     }
     
-    interperetIR()
+    interperetIR(irResults.value);
     irrecv.resume(); // Receive the next value
   }
   //Samsung Button Test
   if(samsungTest == 1){
-    SamsungMontTest()
+    SamsungMonTest();
   } 
   //Asus Button Test 
   if(asusTest == 1){
-    AsusMonTest()
+    AsusMonTest();
   }
   
   delay(1500);
  
 }
 
-void interperetIR(){
- 
-    int valueIR = results.value;
+void interperetIR(int valueIR){
   
      //FF key for my IR Remote
     if(valueIR == 222028317){

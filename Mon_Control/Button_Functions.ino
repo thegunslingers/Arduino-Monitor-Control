@@ -1,9 +1,12 @@
+extern int samsungTest;
+extern int asusTest;
+
 /*Use this to push most buttons on the monitor
 Power button for example*/
 void PushButtonAsus(int pin){
    digitalWrite(pin, HIGH);
    if(asusTest == 1){
-       Serial.println("Pressing Asus Pin %d\n", pin);
+       Serial.println("Pressing Asus Pin:" + pin);
    }
    delay(1500);
    digitalWrite(pin, LOW);
@@ -16,7 +19,7 @@ void PushButtonAsusDouble(int pin){
    digitalWrite(pin, LOW);
    delay(500);
    if(asusTest == 1){
-       Serial.println("Pressing Asus button on Pin %d\n", pin);
+       Serial.println("Pressing Asus button on Pin:" + pin);
    }
    digitalWrite(pin, HIGH);
    delay(1500);
@@ -26,12 +29,18 @@ void PushButtonAsusDouble(int pin){
 void PushButtonPowerSamsung(const int pin) {
     digitalWrite(pin, HIGH);
    if(samsungTest == 1){
-       Serial.println("Pressing Samsung Power Pin %d\n", pin);
+       Serial.println("Pressing Samsung Power Pin:" + pin);
    }
     delay(1000);
     digitalWrite(pin, LOW);
 }
  
+ 
+ void PushButtonInputSamsung(const int pin) {
+    PushButtonInputtSamsung(pin);
+    delay(1000);
+    ReleaseButtonInputSamsung(pin);
+}
  
 //Pushes the Input Button after multiplexing
 void PushButtonInputtSamsung(const int pin) {
@@ -40,7 +49,7 @@ void PushButtonInputtSamsung(const int pin) {
 }
 void ReleaseButtonInputSamsung(const int pin) {
    if(samsungTest == 1){
-       Serial.println("Pressing Asus Pin %d\n", pin);
+       Serial.println("Pressing Asus Pin:" + pin);
    } 
    pinMode(pin, INPUT);   // Puts the pin in a high-impedance (near open circuit) state.
 }

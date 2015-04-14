@@ -1,16 +1,22 @@
  /* Samsung Monitor Buttons Test */
-void SamsungMontTest(){
- //delay(7000);
- PushButtonPowerSamsung(samsungPowerPin);
- delay(1500);
- PushButtonInputSamsung(samsungInputPin);
- delay(600);
- ReleaseButtonInputSamsung(samsungInputPin);  
- delay(1500);
+void SamsungMonTest(){
+   //delay(7000);
+   
+   Serial.println("Samsung Monitor Test Starting:");
+   
+   PushButtonPowerSamsung(samsungPowerPin);
+   delay(1500);
+   PushButtonInputSamsung(samsungInputPin);
+   delay(600);
+   ReleaseButtonInputSamsung(samsungInputPin);  
+   delay(1500);
 }
 //Notes: play with debounce time
 // very safe delay to debounce sammy  delay(2500);
 void AsusMonTest(){
+  
+   Serial.println("Asus Monitor Test Starting:");
+  
   PushButtonAsus(asusTPower);
    //delay(3000);
   //PushButtonAsusDouble(asusTInput);
