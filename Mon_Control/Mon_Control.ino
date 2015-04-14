@@ -10,26 +10,26 @@ decode_results irResults;
  for your specific IR remote and replace values in the 
  Mon_Control File.
 */
-extern int debugIR = 0;
+int debugIR = 0;
 
 //Monitor Tests 0 (off) or 1 (on)
 //Will not run IR or debugIR with either test on
-extern int samsungTest = 0;
-extern int asusTest = 0;
+int samsungTest = 0;
+int asusTest = 0;
 
 
 // Variables for Samsung Monitor
-extern int samsungInputPin = 4;
-extern int samsungPowerPin = 5;
+int samsungInputPin = 4;
+int samsungPowerPin = 5;
 
 //Variables for Thin Asus Monitor
-extern int asusTPower = 6;
-extern int asusTInput = 7;
-extern int asusTMenu  = 8;
-extern int asusTUp    = 9; // also controls brightnest
-extern int asusTDown  = 10; // also controls contrast
+int asusTPower = 6;
+int asusTInput = 7;
+int asusTMenu  = 8;
+int asusTUp    = 9; // also controls brightnest
+int asusTDown  = 10; // also controls contrast
 //????
-extern int asusTOther = 11;
+int asusTOther = 11;
 
 void setup() {
 
