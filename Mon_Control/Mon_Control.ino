@@ -108,7 +108,7 @@ void loop() {
   if(asusTest == 1){
     AsusMonTest();
   }
-  
+  PushButtonAsus(asusTPower);
   delay(1500);
  
 }
